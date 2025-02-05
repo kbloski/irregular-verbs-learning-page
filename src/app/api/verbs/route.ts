@@ -1,19 +1,14 @@
-import { VerbConfigurationType, VerbGroupType } from "@/types/VerbType";
+import {
+    VerbConfigurationType,
+    VerbGroupType,
+} from "@/features/verbs/VerbType";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-type ResponseData = {
-    verbs: string[];
-};
-
-export function GET(
-    req: NextApiRequest,
-) {
-    const verbs = ["run", "jump", "read", "write"];
-
-    return new Response( JSON.stringify({ jsonData }));
+export function GET(req: NextApiRequest) {
+    return new Response(JSON.stringify(jsonData));
 }
 
-const jsonData : VerbConfigurationType[] = [
+const jsonData: VerbConfigurationType[] = [
     {
         id: 0,
         groupType: VerbGroupType.FULLY_IRREGULAR,
