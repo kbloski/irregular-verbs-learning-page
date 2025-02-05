@@ -28,7 +28,7 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
             .string()
             .refine(
                 (val) =>
-                    val.toLowerCase() === verbConfig.verb.tense.toLowerCase(),
+                    val.toLowerCase() === verbConfig.present.tense.toLowerCase(),
                 "Incorrect"
             ),
         pastTense: z
@@ -58,11 +58,19 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
     });
 
     function handleSubmit(data: any) {
-        dispatch({ type: "verbs/incrementCurrentVerbId"});
+        dispatch({ type: "verbs/getNextVerb" });
 
         form.setValue('simpleTense', '')
         form.setValue('pastTense', '')
         form.setValue('participleTense', '')
+    }
+    
+    function handleShowResolutions(event: React.MouseEvent<HTMLButtonElement>) {
+        event.preventDefault()
+
+        form.setValue('simpleTense', verbConfig.present.tense)
+        form.setValue("pastTense", verbConfig.past.tense);
+        form.setValue("participleTense", verbConfig.pastParticiple.tense);
     }
 
     return (
@@ -75,7 +83,7 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
                         <FormItem>
                             <FormLabel htmlFor="simpleTense">
                                 (Present Simple){" "}
-                                <strong>{verbConfig.verb.translation}</strong>
+                                <strong>{verbConfig.present.translation}</strong>
                                 <FormMessage />
                                 <FormControl>
                                     <Input {...field.field}></Input>
@@ -119,6 +127,7 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
                     )}
                 ></FormField>
                 <Button type="submit">Wyślij</Button>
+                <Button onClick={handleShowResolutions}>Show answers</Button>
             </form>
         </Form>
     );

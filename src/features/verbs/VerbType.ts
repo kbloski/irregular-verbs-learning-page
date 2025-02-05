@@ -9,18 +9,18 @@ export enum VerbGroupType {
 }
 
 export type VerbConfigurationType = {
-        id: number,
-        groupType: VerbGroupType,
-        verb: {
-            tense: string,
-            translation: string,
-        },
-        past: {
-            tense: string,
-            translation: string,
-        },
-        pastParticiple: {
-            tense: string,
-            translation: string,
-        },
-}
+    id: number;
+    groupType: VerbGroupType;
+    present: {
+        tense: string;
+        translation: string;
+    };
+    past: {
+        tense: string;
+        translation: string;
+    };
+    pastParticiple: {
+        tense: string;
+        translation: string;
+    };
+};

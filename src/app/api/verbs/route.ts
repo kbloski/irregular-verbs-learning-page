@@ -1,6 +1,8 @@
 import {
     VerbConfigurationType,
-    VerbGroupType,
+    VerbGroupType
+    // VerbConfigurationType,
+    // VerbGroupType,
 } from "@/features/verbs/VerbType";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -12,7 +14,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 0,
         groupType: VerbGroupType.FULLY_IRREGULAR,
-        verb: {
+        present: {
             tense: "be",
             translation: "być",
         },
@@ -28,7 +30,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 1,
         groupType: VerbGroupType.FULLY_IRREGULAR,
-        verb: {
+        present: {
             tense: "can",
             translation: "móc",
         },
@@ -44,7 +46,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 2,
         groupType: VerbGroupType.FULLY_IRREGULAR,
-        verb: {
+        present: {
             tense: "do",
             translation: "robić",
         },
@@ -60,7 +62,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 3,
         groupType: VerbGroupType.FULLY_IRREGULAR,
-        verb: {
+        present: {
             tense: "go",
             translation: "iść",
         },
@@ -76,7 +78,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 4,
         groupType: VerbGroupType.IDENTICALS,
-        verb: {
+        present: {
             tense: "cost",
             translation: "kosztować",
         },
@@ -92,7 +94,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 5,
         groupType: VerbGroupType.IDENTICALS,
-        verb: {
+        present: {
             tense: "cut",
             translation: "ciąć",
         },
@@ -108,7 +110,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 6,
         groupType: VerbGroupType.IDENTICALS,
-        verb: {
+        present: {
             tense: "hit",
             translation: "uderzać",
         },
@@ -124,7 +126,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 7,
         groupType: VerbGroupType.IDENTICALS,
-        verb: {
+        present: {
             tense: "put",
             translation: "położyć",
         },
@@ -140,7 +142,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 8,
         groupType: VerbGroupType.IDENTICALS,
-        verb: {
+        present: {
             tense: "read",
             translation: "czytać",
         },
@@ -156,7 +158,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 9,
         groupType: VerbGroupType.IDENTICALS,
-        verb: {
+        present: {
             tense: "set",
             translation: "ustawić",
         },
@@ -172,7 +174,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 10,
         groupType: VerbGroupType.IDENTICALS,
-        verb: {
+        present: {
             tense: "shut",
             translation: "zamykać",
         },
@@ -188,7 +190,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 11,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "bend",
             translation: "zginać",
         },
@@ -204,7 +206,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 12,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "bring",
             translation: "przynosić",
         },
@@ -220,7 +222,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 13,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "build",
             translation: "budować",
         },
@@ -236,7 +238,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 14,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "burn",
             translation: "palić",
         },
@@ -252,7 +254,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 15,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "buy",
             translation: "kupować",
         },
@@ -268,7 +270,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 16,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "catch",
             translation: "łapać",
         },
@@ -284,7 +286,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 17,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "feel",
             translation: "czuć",
         },
@@ -300,7 +302,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 18,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "fight",
             translation: "walczyć",
         },
@@ -316,7 +318,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 19,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "find",
             translation: "znaleźć",
         },
@@ -332,7 +334,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 20,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "get",
             translation: "dostać",
         },
@@ -348,7 +350,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 21,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "hang",
             translation: "wieszać",
         },
@@ -364,7 +366,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 22,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "have",
             translation: "mieć",
         },
@@ -380,7 +382,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 23,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "hear",
             translation: "słyszeć",
         },
@@ -396,7 +398,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 24,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "keep",
             translation: "trzymać",
         },
@@ -412,7 +414,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 25,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "lay",
             translation: "kłaść",
         },
@@ -428,7 +430,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 26,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "lead",
             translation: "prowadzić",
         },
@@ -444,7 +446,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 27,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "learn",
             translation: "uczyć się",
         },
@@ -460,7 +462,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 28,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "leave",
             translation: "opuszczać",
         },
@@ -476,7 +478,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 29,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "lend",
             translation: "pożyczać",
         },
@@ -492,7 +494,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 30,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "lose",
             translation: "tracić",
         },
@@ -508,7 +510,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 31,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "make",
             translation: "robić",
         },
@@ -524,7 +526,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 32,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "mean",
             translation: "znaczyć",
         },
@@ -540,7 +542,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 33,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "meet",
             translation: "spotykać",
         },
@@ -556,7 +558,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 34,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "pay",
             translation: "płacić",
         },
@@ -572,7 +574,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 35,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "say",
             translation: "powiedzieć",
         },
@@ -588,7 +590,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 36,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "sell",
             translation: "sprzedawać",
         },
@@ -604,7 +606,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 37,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "send",
             translation: "wysłać",
         },
@@ -620,7 +622,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 38,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "shine",
             translation: "świecić",
         },
@@ -636,7 +638,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 39,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "shoot",
             translation: "strzelać",
         },
@@ -652,7 +654,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 40,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "sit",
             translation: "siedzieć",
         },
@@ -668,7 +670,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 41,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "sleep",
             translation: "spać",
         },
@@ -684,7 +686,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 42,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "smell",
             translation: "pachnieć",
         },
@@ -700,7 +702,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 43,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "spell",
             translation: "literować",
         },
@@ -716,7 +718,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 44,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "spend",
             translation: "wydawać",
         },
@@ -732,7 +734,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 45,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "spill",
             translation: "rozlać",
         },
@@ -748,7 +750,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 46,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "stand",
             translation: "stać",
         },
@@ -764,7 +766,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 47,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "teach",
             translation: "uczyć",
         },
@@ -780,7 +782,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 48,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "tell",
             translation: "powiedzieć",
         },
@@ -796,7 +798,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 49,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "think",
             translation: "myśleć",
         },
@@ -812,7 +814,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 50,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "throw",
             translation: "rzucać",
         },
@@ -828,7 +830,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 51,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "understand",
             translation: "rozumieć",
         },
@@ -844,7 +846,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 52,
         groupType: VerbGroupType.FIRST_DIFFERENT,
-        verb: {
+        present: {
             tense: "win",
             translation: "wygrywać",
         },
@@ -860,7 +862,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 53,
         groupType: VerbGroupType.MIDDLE_DIFFERENT,
-        verb: {
+        present: {
             tense: "become",
             translation: "stawać się",
         },
@@ -876,7 +878,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 54,
         groupType: VerbGroupType.MIDDLE_DIFFERENT,
-        verb: {
+        present: {
             tense: "come",
             translation: "przyjść",
         },
@@ -892,7 +894,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 55,
         groupType: VerbGroupType.MIDDLE_DIFFERENT,
-        verb: {
+        present: {
             tense: "overcome",
             translation: "przezwyciężać",
         },
@@ -908,7 +910,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 56,
         groupType: VerbGroupType.MIDDLE_DIFFERENT,
-        verb: {
+        present: {
             tense: "run",
             translation: "biegać",
         },
@@ -924,7 +926,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 57,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "bite",
             translation: "gryźć",
         },
@@ -940,7 +942,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 58,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "break",
             translation: "łamać",
         },
@@ -956,7 +958,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 59,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "choose",
             translation: "wybierać",
         },
@@ -972,7 +974,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 60,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "drive",
             translation: "prowadzić",
         },
@@ -988,7 +990,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 61,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "eat",
             translation: "jeść",
         },
@@ -1004,7 +1006,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 62,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "fall",
             translation: "upadać",
         },
@@ -1020,7 +1022,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 63,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "forget",
             translation: "zapomnieć",
         },
@@ -1036,7 +1038,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 64,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "give",
             translation: "dawać",
         },
@@ -1052,7 +1054,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 65,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "hide",
             translation: "chować",
         },
@@ -1068,7 +1070,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 66,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "ride",
             translation: "jeździć",
         },
@@ -1084,7 +1086,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 67,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "see",
             translation: "widzieć",
         },
@@ -1100,7 +1102,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 68,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "shake",
             translation: "trząść",
         },
@@ -1116,7 +1118,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 69,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "speak",
             translation: "mówić",
         },
@@ -1132,7 +1134,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 70,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "steal",
             translation: "kraść",
         },
@@ -1148,7 +1150,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 71,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "take",
             translation: "brać",
         },
@@ -1164,7 +1166,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 72,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "wake",
             translation: "budzić się",
         },
@@ -1180,7 +1182,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 73,
         groupType: VerbGroupType.VERB_en,
-        verb: {
+        present: {
             tense: "write",
             translation: "pisać",
         },
@@ -1196,7 +1198,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 74,
         groupType: VerbGroupType.VERB_an_un,
-        verb: {
+        present: {
             tense: "begin",
             translation: "zaczynać",
         },
@@ -1212,7 +1214,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 75,
         groupType: VerbGroupType.VERB_an_un,
-        verb: {
+        present: {
             tense: "drink",
             translation: "pić",
         },
@@ -1228,7 +1230,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 76,
         groupType: VerbGroupType.VERB_an_un,
-        verb: {
+        present: {
             tense: "ring",
             translation: "dzwonić",
         },
@@ -1244,7 +1246,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 77,
         groupType: VerbGroupType.VERB_an_un,
-        verb: {
+        present: {
             tense: "sing",
             translation: "śpiewać",
         },
@@ -1260,7 +1262,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 78,
         groupType: VerbGroupType.VERB_an_un,
-        verb: {
+        present: {
             tense: "sink",
             translation: "tonąć",
         },
@@ -1276,7 +1278,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 79,
         groupType: VerbGroupType.VERB_an_un,
-        verb: {
+        present: {
             tense: "swim",
             translation: "pływać",
         },
@@ -1292,7 +1294,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 80,
         groupType: VerbGroupType.VERB_wn,
-        verb: {
+        present: {
             tense: "blow",
             translation: "dmuchać",
         },
@@ -1308,7 +1310,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 81,
         groupType: VerbGroupType.VERB_wn,
-        verb: {
+        present: {
             tense: "draw",
             translation: "rysować",
         },
@@ -1324,7 +1326,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 82,
         groupType: VerbGroupType.VERB_wn,
-        verb: {
+        present: {
             tense: "fly",
             translation: "latać",
         },
@@ -1340,7 +1342,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 83,
         groupType: VerbGroupType.VERB_wn,
-        verb: {
+        present: {
             tense: "grow",
             translation: "rosnąć",
         },
@@ -1356,7 +1358,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 84,
         groupType: VerbGroupType.VERB_wn,
-        verb: {
+        present: {
             tense: "know",
             translation: "wiedzieć",
         },
@@ -1372,7 +1374,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 85,
         groupType: VerbGroupType.VERB_wn,
-        verb: {
+        present: {
             tense: "show",
             translation: "pokazywać",
         },
@@ -1388,7 +1390,7 @@ const jsonData: VerbConfigurationType[] = [
     {
         id: 86,
         groupType: VerbGroupType.VERB_wn,
-        verb: {
+        present: {
             tense: "wear",
             translation: "nosić",
         },
