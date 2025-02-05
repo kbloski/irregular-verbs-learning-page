@@ -1,10 +1,10 @@
 "use client";
 
-// import VerbFormValidator from "@/components/VerbFormValidator";
 import { useGetVerbsQuery } from "@/features/api/apiVerbs";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { InitialStateType} from '../features/verbs/verbsSlice'
+import VerbFormValidator from "@/features/verbs/VerbsValidationForm";
 
 export default function Home() {
     const { data : verbsData, error, isLoading } = useGetVerbsQuery();
@@ -20,9 +20,13 @@ export default function Home() {
 
 
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            {/* <VerbFormValidator verbConfig={{} as any}/> */}
-            {/* { JSON.stringify( verbsData )} */}
+        <div className="flex items-center justify-center">
+            {
+                verbsStore.verbs.length && 
+                <VerbFormValidator 
+                    verbConfig={verbsStore.verbs[verbsStore.currentVerbId]} 
+                />
+            }
         </div>
     );
 }

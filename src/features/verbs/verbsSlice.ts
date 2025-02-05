@@ -25,6 +25,10 @@ const learnSlice = createSlice({
         },
         setCurrentVerbId: (state, action) => {
             state.currentVerbId = action.payload;
+        },
+        incrementCurrentVerbId(state, action){
+            
+            ++state.currentVerbId;
         }
     },
 })
