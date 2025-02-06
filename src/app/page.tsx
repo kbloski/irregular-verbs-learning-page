@@ -20,13 +20,15 @@ export default function Home() {
 
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center w-100">
             {
                 verbsStore.verbs.length && 
                 <VerbFormValidator 
+                    key={verbsStore.currentVerbId}
                     verbConfig={verbsStore.verbs[verbsStore.currentVerbId]} 
                 />
             }
         </div>
     );
 }
+ 
