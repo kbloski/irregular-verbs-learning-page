@@ -19,16 +19,20 @@ export default function Home() {
     }, [ verbsData])
 
 
-    return (
-        <div className="flex items-center justify-center w-100">
-            {
-                verbsStore.verbs.length && 
-                <VerbFormValidator 
+    return (<>
+            <div className="text-center">
+                { verbsStore.verbs.length }
+            </div>
+            <div className="flex items-center justify-center w-100"> 
+                {
+                    verbsStore.verbs.length && 
+                    <VerbFormValidator 
                     key={verbsStore.currentVerbId}
-                    verbConfig={verbsStore.verbs[verbsStore.currentVerbId]} 
-                />
-            }
-        </div>
+                        verbConfig={verbsStore.verbs[verbsStore.currentVerbId]} 
+                        />
+                }
+            </div>
+        </>
     );
 }
  

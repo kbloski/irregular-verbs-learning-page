@@ -28,22 +28,22 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
             .string()
             .refine(
                 (val) =>
-                    val.toLowerCase() === verbConfig.present.tense.toLowerCase(),
+                    val.toLowerCase().trim() === verbConfig.present.tense.trim().toLowerCase(),
                 "Incorrect"
             ),
         pastTense: z
             .string()
             .refine(
                 (val) =>
-                    val.toLowerCase() === verbConfig.past.tense.toLowerCase(),
+                    val.toLowerCase().trim() === verbConfig.past.tense.trim().toLowerCase(),
                 "Incorrect"
             ),
         participleTense: z
             .string()
             .refine(
                 (val) =>
-                    val.toLowerCase() ===
-                    verbConfig.pastParticiple.tense.toLowerCase(),
+                    val.toLowerCase().trim() ===
+                    verbConfig.pastParticiple.tense.trim().toLowerCase(),
                 "Incorrect"
             ),
     });
@@ -83,10 +83,15 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
                         <FormItem>
                             <FormLabel htmlFor="simpleTense">
                                 (Present Simple){" "}
-                                <strong>{verbConfig.present.translation}</strong>
+                                <strong>
+                                    {verbConfig.present.translation}
+                                </strong>
                                 <FormMessage />
                                 <FormControl>
-                                    <Input {...field.field}></Input>
+                                    <Input
+                                        autoComplete="off"
+                                        {...field.field}
+                                    ></Input>
                                 </FormControl>
                             </FormLabel>
                         </FormItem>
@@ -102,7 +107,10 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
                                 <strong>{verbConfig.past.translation}</strong>
                                 <FormMessage />
                                 <FormControl>
-                                    <Input {...field.field}></Input>
+                                    <Input
+                                        {...field.field}
+                                        autoComplete="off"
+                                    ></Input>
                                 </FormControl>
                             </FormLabel>
                         </FormItem>
@@ -120,7 +128,10 @@ function VerbFormValidator({ verbConfig }: VerbFormValidatorProps) {
                                 </strong>
                                 <FormMessage />
                                 <FormControl>
-                                    <Input {...field.field}></Input>
+                                    <Input
+                                        {...field.field}
+                                        autoComplete="off"
+                                    ></Input>
                                 </FormControl>
                             </FormLabel>
                         </FormItem>
